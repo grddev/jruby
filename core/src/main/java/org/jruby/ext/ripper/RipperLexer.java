@@ -621,11 +621,11 @@ public class RipperLexer extends LexingCommon {
         switch (token) {
             case RipperParser.yyErrorCode: System.err.print("yyErrorCode,"); break;
             // missing some RipperParser.
-            case RipperParser.tIDENTIFIER: System.err.print("tIDENTIFIER["+ value() + "],"); break;
-            case RipperParser.tFID: System.err.print("tFID[" + value() + "],"); break;
-            case RipperParser.tGVAR: System.err.print("tGVAR[" + value() + "],"); break;
-            case RipperParser.tIVAR: System.err.print("tIVAR[" + value() +"],"); break;
-            case RipperParser.tCONSTANT: System.err.print("tCONSTANT["+ value() +"],"); break;
+            case RipperParser.tIDENTIFIER: System.err.print("tIDENTIFIER["+ identValue + "],"); break;
+            case RipperParser.tFID: System.err.print("tFID[" + identValue + "],"); break;
+            case RipperParser.tGVAR: System.err.print("tGVAR[" + identValue + "],"); break;
+            case RipperParser.tIVAR: System.err.print("tIVAR[" + identValue +"],"); break;
+            case RipperParser.tCONSTANT: System.err.print("tCONSTANT["+ identValue +"],"); break;
             case RipperParser.tCVAR: System.err.print("tCVAR,"); break;
             case RipperParser.tINTEGER: System.err.print("tINTEGER,"); break;
             case RipperParser.tFLOAT: System.err.print("tFLOAT,"); break;

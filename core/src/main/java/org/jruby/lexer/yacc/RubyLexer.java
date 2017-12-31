@@ -820,6 +820,7 @@ public class RubyLexer extends LexingCommon {
             case '\n': System.err.println("NL"); break;
             case EOF: System.out.println("EOF"); break;
             case RubyParser.tDSTAR: System.err.print("tDSTAR"); break;
+            case RubyParser.tSTRING_DEND: System.err.print("tDSTRING_DEND,"); break;
             default: System.err.print("'" + (char)token + "',"); break;
         }
     }
