@@ -93,7 +93,7 @@ public class MixedModeIRMethod extends AbstractIRMethod implements Compilable<Dy
     private IRubyObject INTERPRET_METHOD(ThreadContext context, InterpreterContext ic, RubyModule implClass,
                                                IRubyObject self, String name, IRubyObject[] args, Block block) {
         try {
-            ThreadContext.pushBacktrace(context, name, ic.getFileName(), context.getLine());
+            ThreadContext.pushBacktrace(context, method.getName(), ic.getFileName(), context.getLine());
 
             if (ic.hasExplicitCallProtocol()) {
                 return ic.getEngine().interpret(context, null, self, ic, implClass, name, args, block);
@@ -126,7 +126,7 @@ public class MixedModeIRMethod extends AbstractIRMethod implements Compilable<Dy
     private IRubyObject INTERPRET_METHOD(ThreadContext context, InterpreterContext ic, RubyModule implClass,
                                                IRubyObject self, String name, Block block) {
         try {
-            ThreadContext.pushBacktrace(context, name, ic.getFileName(), context.getLine());
+            ThreadContext.pushBacktrace(context, method.getName(), ic.getFileName(), context.getLine());
 
             if (ic.hasExplicitCallProtocol()) {
                 return ic.getEngine().interpret(context, null, self, ic, implClass, name, block);
@@ -159,7 +159,7 @@ public class MixedModeIRMethod extends AbstractIRMethod implements Compilable<Dy
     private IRubyObject INTERPRET_METHOD(ThreadContext context, InterpreterContext ic, RubyModule implClass,
                                                IRubyObject self, String name, IRubyObject arg1, Block block) {
         try {
-            ThreadContext.pushBacktrace(context, name, ic.getFileName(), context.getLine());
+            ThreadContext.pushBacktrace(context, method.getName(), ic.getFileName(), context.getLine());
 
             if (ic.hasExplicitCallProtocol()) {
                 return ic.getEngine().interpret(context, null, self, ic, implClass, name, arg1, block);
@@ -192,7 +192,7 @@ public class MixedModeIRMethod extends AbstractIRMethod implements Compilable<Dy
     private IRubyObject INTERPRET_METHOD(ThreadContext context, InterpreterContext ic, RubyModule implClass,
                                                IRubyObject self, String name, IRubyObject arg1, IRubyObject arg2,  Block block) {
         try {
-            ThreadContext.pushBacktrace(context, name, ic.getFileName(), context.getLine());
+            ThreadContext.pushBacktrace(context, method.getName(), ic.getFileName(), context.getLine());
 
             if (ic.hasExplicitCallProtocol()) {
                 return ic.getEngine().interpret(context, null, self, ic, implClass, name, arg1, arg2, block);
@@ -224,7 +224,7 @@ public class MixedModeIRMethod extends AbstractIRMethod implements Compilable<Dy
     private IRubyObject INTERPRET_METHOD(ThreadContext context, InterpreterContext ic, RubyModule implClass,
                                                IRubyObject self, String name, IRubyObject arg1, IRubyObject arg2, IRubyObject arg3, Block block) {
         try {
-            ThreadContext.pushBacktrace(context, name, ic.getFileName(), context.getLine());
+            ThreadContext.pushBacktrace(context, method.getName(), ic.getFileName(), context.getLine());
 
             if (ic.hasExplicitCallProtocol()) {
                 return ic.getEngine().interpret(context, null, self, ic, implClass, name, arg1, arg2, arg3, block);
