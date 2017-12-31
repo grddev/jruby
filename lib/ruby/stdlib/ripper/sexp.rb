@@ -125,23 +125,22 @@ class Ripper
       val
     end
 
+    def _dispatch_event_new
+      []
+    end
+
+    def _dispatch_event_push(list, item)
+      list.push item
+      list
+    end
+
     PARSER_EVENT_TABLE.each do |event, arity|
-      if /_new\z/ =~ event.to_s and arity == 0
-        module_eval(<<-End, __FILE__, __LINE__ + 1)
-          def on_#{event}
-            []
-          end
-        End
-      elsif /_add\z/ =~ event.to_s
-        module_eval(<<-End, __FILE__, __LINE__ + 1)
-          def on_#{event}(list, item)
-            list.push item
-            list
-          end
-        End
+      if /_new\z/ =~ event and arity == 0
+        alias_method "on_#{event}", :_dispatch_event_new
+      elsif /_add\z/ =~ event
+        alias_method "on_#{event}", :_dispatch_event_push
       end
     end
   end
+
 end
-
-
